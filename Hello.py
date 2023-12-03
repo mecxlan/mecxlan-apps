@@ -45,8 +45,6 @@ def run():
       """
     )
 
-if __name__ == "__main__":
-    run()
 
 
 # GRADED FUNCTION: house_model
@@ -80,3 +78,6 @@ model = house_model()
 new_y = 7.0
 prediction = model.predict([new_y])[0]
 print(prediction)
+
+if __name__ == "__main__":
+    run()
