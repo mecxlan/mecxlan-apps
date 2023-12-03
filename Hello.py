@@ -30,7 +30,7 @@ def run():
 
     st.markdown(
         """
-        Simplest Neural Network Model trained on a few house price example based on the 
+        Simplest Neural Network Model trained on a few house price examples based on the 
         'Hello World' of Neural Network.
         **👈 Select a demo from the sidebar** to see some examples
         of what Streamlit can do!
