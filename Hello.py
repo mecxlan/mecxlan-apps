@@ -48,9 +48,6 @@ def run():
 if __name__ == "__main__":
     run()
 
-!pip install tensorflow numpy
-
-
 
 # GRADED FUNCTION: house_model
 def house_model():
