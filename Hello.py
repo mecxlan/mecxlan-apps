@@ -15,28 +15,20 @@
 import streamlit as st
 from streamlit.logger import get_logger
 
-import tensorflow as tf
-import numpy as np
-
-from tensorflow import keras
-
 LOGGER = get_logger(__name__)
-
-
 def run():
     st.set_page_config(
         page_title="House Price Predictor",
         page_icon="🛖",
     )
-
-    st.write("# Welcome to 'House Price Pridictor' Streamlit Application! 👋")
+st.write("# Welcome to 'House Price Pridictor' Streamlit Application! 👋")
 
     # st.sidebar.success("Select a demo above.")
 
-    st.markdown(
+st.markdown(
         """
-        Simplest Neural Network Model trained on a few house price examples based on the 
-        'Hello World' of Neural Network.
+        Simplest Neural Network trained on a Seven houses price on the foundation of 
+        the 'Hello World' of Neural Network.
         **👈 Select a demo from the sidebar** to see some examples
         of what Streamlit can do!
         ### Want to learn more?
@@ -45,7 +37,11 @@ def run():
       """
     )
 
-# Load the trained model
+import tensorflow as tf
+import numpy as np
+
+from tensorflow import keras
+
 # GRADED FUNCTION: house_model
 def house_model():
     ### START CODE HERE
@@ -91,7 +87,6 @@ bedrooms = st.slider('Number of bedrooms', 1, 10, 7)
 predicted_price = predict_price(bedrooms)
 
 st.write('Predicted price:', predicted_price)
-
 
 if __name__ == "__main__":
     run()
