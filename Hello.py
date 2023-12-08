@@ -16,10 +16,12 @@ import streamlit as st
 from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
+
 st.set_page_config(
-        page_title="House Price Predictor",
-        page_icon="🛖",
-    )
+   page_title="House Price Predictor",
+   page_icon="🛖"
+)
+
 st.write("# Welcome to 'House Price Pridictor' Streamlit Application! 👋")
 
     # st.sidebar.success("Select a demo above.")
@@ -89,7 +91,8 @@ st.title('House Price Prediction')
 bedrooms = st.slider('Number of bedrooms', 1, 10, 7)
 predicted_price = predict_price(bedrooms)
 
-st.write('Predicted price:', predicted_price)
+st.write("""Scaling for this model => 5K units = 0.5 and the input slider is.
+          Predicted price:""", predicted_price)
 
 if __name__ == "__main__":
     run()
