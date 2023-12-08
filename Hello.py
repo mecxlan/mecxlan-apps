@@ -18,18 +18,16 @@ from streamlit.logger import get_logger
 LOGGER = get_logger(__name__)
 
 st.set_page_config(
-   page_title="House Price Predictor",
-   page_icon="🛖"
+   page_title="M.Arslan",
+   page_icon="🅰️"
 )
 
-st.write("# Welcome to 'House Price Pridictor' Streamlit Application! 👋")
+st.write("# Welcome to 'Muhammad Arslan's' Streamlit Application! 👋")
 
-    # st.sidebar.success("Select a demo above.")
-
+ 
 st.markdown(
         """
-        Simplest Neural Network trained on a 'Seven houses' price Build on the foundation of 
-        'Hello World' of Neural Network.
+        Showcase portfolio & Practical Implementation of Learning.
         
         
         **👈 Select a demo from the sidebar** to see some examples of what Streamlit can do!        
@@ -40,63 +38,7 @@ st.markdown(
         - Follow me on [LinkedIn](www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan)
 
       """
-    )
-
-import tensorflow as tf
-import numpy as np
-
-from tensorflow import keras
-
-# GRADED FUNCTION: house_model
-def house_model():
-    ### START CODE HERE
-
-    # Define input and output tensors with the values for houses with 1 up to 6 bedrooms
-    # Hint: Remember to explictly set the dtype as float
-    xs = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0], dtype=float)
-
-    # Down Scaling of 10000 units = 1 and 5000 units = 0.5
-    ys = np.array([0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5], dtype=float)
-
-    # Define your model (should be a model with 1 dense layer and 1 unit)
-    model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])])
-
-    # Compile your model
-    # Set the optimizer to Stochastic Gradient Descent
-    # and use Mean Squared Error as the loss function
-    model.compile(optimizer='sgd', loss='mean_squared_error')
-
-    # Train your model for 1000 epochs by feeding the i/o tensors
-    model.fit(xs, ys, epochs=1000)
-
-    ### END CODE HERE
-    return model
-
-# Get your trained model
-model = house_model()
-
-
-def predict_price(bedrooms):
-  # Convert the number of bedrooms to a NumPy array
-  bedrooms = np.array([bedrooms], dtype=float)
-
-  # Make a prediction using the trained model
-  prediction = model.predict(bedrooms)[0]
-
-  return prediction
-
-# Create a Streamlit app
-st.title('House Price Prediction')
-
-bedrooms = st.slider('Number of bedrooms', 1, 10, 7)
-predicted_price = predict_price(bedrooms)
-
-st.markdown(
-   """
-   - Scaling: 10k = 1 unit
-   """
 )
-st.write("Predicted price:", predicted_price)
 
 if __name__ == "__main__":
     run()
