@@ -22,7 +22,7 @@ st.set_page_config(
    page_icon="🅰️"
 )
 
-st.write("# Welcome to 'Muhammad Arslan's' Streamlit Application! 👋")
+st.write("# Welcome to 'Muhammad Arslan's' Streamlit Applications! 👋")
 
  
 st.markdown(
