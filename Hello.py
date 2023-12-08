@@ -91,8 +91,13 @@ st.title('House Price Prediction')
 bedrooms = st.slider('Number of bedrooms', 1, 10, 7)
 predicted_price = predict_price(bedrooms)
 
-st.write("""Scaling for this model => 5K units = 0.5 and the input slider is.
-          Predicted price:""", predicted_price)
+st.markdown(
+   """
+   - Scaling
+      10k = 1 unit
+   """
+)
+st.write("Predicted price:", predicted_price)
 
 if __name__ == "__main__":
     run()
