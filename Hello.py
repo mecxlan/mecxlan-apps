@@ -32,10 +32,7 @@ st.markdown(
         
         **👈 Select a demo from the sidebar** to see some examples of what Streamlit can do!        
         ### Want to learn more?
-
-                
-        - Check out [Hello World of Neural Network_tf](https://www.linkedin.com/pulse/hello-world-neural-network-tensorflow-muhammad-arslan-gnxrf/?trackingId=0hlhIzCCSRKAWuw5pu0DPA%3D%3D)
-        - Follow me on [LinkedIn](www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan)
+        Follow Me on these platforms
 
       """
 )
