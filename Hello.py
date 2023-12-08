@@ -43,7 +43,7 @@ st.link_button("💻 Github", "https://github.com/mecxlan/")
 
 st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/")
 
-st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan")
+st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan", "🔗 LinkedIn", "www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan")
 
 if __name__ == "__main__":
     run()
