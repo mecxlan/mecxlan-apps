@@ -36,11 +36,22 @@ st.markdown(
 
       """
 )
-st.link_button("💻 Github", "https://github.com/mecxlan/") 
-st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/") 
 
-st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan") 
-st.link_button("🔗 LinkedIn", "www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan")
+# st.link_button("💻 Github", "https://github.com/mecxlan/") 
+# st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/") 
 
+# st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan") 
+# st.link_button("🔗 LinkedIn", "www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan")
+
+c1, c2, c3, c4 = st.columns(1)
+with c1:
+    st.info('**Github: [@mecxlan](https://github.com/mecxlan/)**', icon="💻")
+with c2:
+    st.info('**Data Analytics: [@mecxlan](https://mecxlan.hashnode.dev/)**', icon="🧭")
+with c3:
+    st.info('**Data Sets: [@mecxlan](https://www.kaggle.com/mecxlan)**', icon="📅")
+with c4:
+   st.info('**LinkedIn: [@mecxlan](www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan)**', icon="🔗")
+   
 if __name__ == "__main__":
     run()
