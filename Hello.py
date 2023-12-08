@@ -93,8 +93,7 @@ predicted_price = predict_price(bedrooms)
 
 st.markdown(
    """
-   - Scaling
-      10k = 1 unit
+   - Scaling: 10k = 1 unit
    """
 )
 st.write("Predicted price:", predicted_price)
