@@ -22,7 +22,7 @@ st.set_page_config(
    page_icon="🅰️"
 )
 
-st.write("# Welcome to 'Muhammad Arslan's' Streamlit Applications! 👋")
+st.write("# Welcome to Muhammad Arslan's Streamlit Applications! 👋")
 
  
 st.markdown(
@@ -39,6 +39,11 @@ st.markdown(
 
       """
 )
+st.link_button("💻 Github", "https://github.com/mecxlan/")
+
+st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/")
+
+st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan")
 
 if __name__ == "__main__":
     run()
