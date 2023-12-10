@@ -18,7 +18,7 @@ from streamlit.logger import get_logger
 LOGGER = get_logger(__name__)
 
 st.set_page_config(
-   page_title="M_ARSLAN",
+   page_title="M_ARSLAN Apps",
    page_icon="🅰️"
 )
 
@@ -30,7 +30,7 @@ st.markdown(
         Showcase portfolio & Practical Implementation of Learning.
         
         
-        **👈 Select a demo from the sidebar** to see some examples of what Streamlit can do!        
+        **👈 Select a demo from the sidebar** to see some my Streamlit deployment!        
         ### Want to learn more?
         Follow Me on these platforms
 
@@ -39,7 +39,6 @@ st.markdown(
 
 st.link_button("💻 Github", "https://github.com/mecxlan/") 
 st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/") 
-
 st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan") 
 st.link_button("🔗 LinkedIn", "www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan")
 
