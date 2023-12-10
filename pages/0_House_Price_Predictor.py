@@ -37,14 +37,7 @@ st.markdown(
 
                 
         - Check out [Hello World of Neural Network_tf](https://www.linkedin.com/pulse/hello-world-neural-network-tensorflow-muhammad-arslan-gnxrf/?trackingId=0hlhIzCCSRKAWuw5pu0DPA%3D%3D)
-        - Follow me on [LinkedIn](www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan)
-
-        
-
-        [Problem Statement](https://www.linkedin.com/posts/mecxlan_mecxlan-github-streamlit-activity-7138927999374057474-Qnht?utm_source=share&utm_medium=member_desktop):
-        A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1-bedroom house cost 100k, a 2-bedroom house cost 150k etc.
-        How would you create a neural network that learns this relationship so that it would predict a 7-bedroom house as costing close to 400k etc.
-        Hint: Your network might work better if you scale the house price down. You don't have to give the answer 400...it might be better to create something that predicts the number 4, and then your answer is in the 'hundreds of thousands' etc.
+        - Follow me on [LinkedIn](www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan
       """
     )
 
@@ -94,12 +87,18 @@ def predict_price(bedrooms):
 # Create a Streamlit app
 st.title('House Price Prediction')
 
-bedrooms = st.slider('Number of bedrooms', 1, 10, 7)
+st.markdown("""
+   [Problem Statement](https://www.linkedin.com/posts/mecxlan_mecxlan-github-streamlit-activity-7138927999374057474-Qnht?utm_source=share&utm_medium=member_desktop):
+      A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1-bedroom house cost 100k, a 2-bedroom house cost 150k etc.
+      How would you create a neural network that learns this relationship so that it would predict a 7-bedroom house as costing close to 400k etc.
+      Hint: Your network might work better if you scale the house price down. You don't have to give the answer 400...it might be better to create something that predicts the number 4, and then your answer is in the 'hundreds of thousands' etc.
+""")
+bedrooms = st.slider('Number of bedrooms', 1, 1000, 7)
 predicted_price = predict_price(bedrooms)
 
 st.markdown(
    """
-   - Scaling: 10k = 1 unit
+   - Scaling: $ 10k = 1 unit
    """
 )
 st.write("Predicted price:", predicted_price)
