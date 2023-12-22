@@ -12,43 +12,42 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import time
+# import time
 
-import numpy as np
+# import numpy as np
 
-import streamlit as st
-from streamlit.hello.utils import show_code
-
-
-def plotting_demo():
-    progress_bar = st.sidebar.progress(0)
-    status_text = st.sidebar.empty()
-    last_rows = np.random.randn(1, 1)
-    chart = st.line_chart(last_rows)
-
-    for i in range(1, 101):
-        new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
-        status_text.text("%i%% Complete" % i)
-        chart.add_rows(new_rows)
-        progress_bar.progress(i)
-        last_rows = new_rows
-        time.sleep(0.05)
-
-    progress_bar.empty()
-
-    # Streamlit widgets automatically run the script from top to bottom. Since
-    # this button is not connected to any other logic, it just causes a plain
-    # rerun.
-    st.button("Re-run")
+# import streamlit as st
+# from streamlit.hello.utils import show_code
 
 
-st.set_page_config(page_title="Plotting Demo", page_icon="")
-st.markdown("# Plotting Demo")
-st.sidebar.header("Plotting Demo")
+# def plotting_demo():
+#     progress_bar = st.sidebar.progress(0)
+#     status_text = st.sidebar.empty()
+#     last_rows = np.random.randn(1, 1)
+#     chart = st.line_chart(last_rows)
+
+#     for i in range(1, 101):
+#         new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
+#         status_text.text("%i%% Complete" % i)
+#         chart.add_rows(new_rows)
+#         progress_bar.progress(i)
+#         last_rows = new_rows
+#         time.sleep(0.05)
+
+#     progress_bar.empty()
+
+#     # Streamlit widgets automatically run the script from top to bottom. Since
+#     # this button is not connected to any other logic, it just causes a plain
+#     # rerun.
+#     st.button("Re-run")
+
+
+st.set_page_config(page_title="MRI Brain Tumor Segmentation", page_icon="🧠")
+st.markdown("# MRI Brain Tumor Segmentation")
+# st.sidebar.header("Plotting Demo")
 st.write(
-    """This demo illustrates a combination of plotting and animation with
-Streamlit. We're generating a bunch of random numbers in a loop for around
-5 seconds. Enjoy!"""
+    """ This MRI-Brain Tumor Segmentation illustrates my Final Year Project. It requires input MRI Image in JPEG or PNG format.
+    It'll apply a Pre-Trained Model apply a CNN-Convolution Neural Network Named "deeplabv3_resnet50_random". Enjoy!"""
 )
 
 # Changes
@@ -132,30 +131,49 @@ def segment(input):
     
     return mask
 
-import gradio as gr
+# import gradio as gr
 
-i = gr.inputs.Image(shape=(112, 112), label="Input Brain MRI")
-o = gr.outputs.Image(label="Hasil Segmentasi")
+# i = gr.inputs.Image(shape=(112, 112), label="Input Brain MRI")
+# o = gr.outputs.Image(label="Hasil Segmentasi")
 
-examples = [["TCGA_CS_5395_19981004_12.png"], 
-            ["TCGA_CS_5395_19981004_14.png"],
-            ["TCGA_DU_5849_19950405_20.png"],
-            ["TCGA_DU_5849_19950405_24.png"],
-            ["TCGA_DU_5849_19950405_28.png"]]
+# examples = [["TCGA_CS_5395_19981004_12.png"], 
+#             ["TCGA_CS_5395_19981004_14.png"],
+#             ["TCGA_DU_5849_19950405_20.png"],
+#             ["TCGA_DU_5849_19950405_24.png"],
+#             ["TCGA_DU_5849_19950405_28.png"]]
 
-title = "Sistem Segmentasi Citra MRI Otak berbasis Artificial Intelligence"
-description = "This system is designed to help automate the process of accurately and efficiently segmenting brain MRIs into regions of interest. It does this by using a UBNet-Seg Architecture that has been trained on a large dataset of manually annotated brain images."
+# title = "Sistem Segmentasi Citra MRI Otak berbasis Artificial Intelligence"
+# description = "This system is designed to help automate the process of accurately and efficiently segmenting brain MRIs into regions of interest. It does this by using a UBNet-Seg Architecture that has been trained on a large dataset of manually annotated brain images."
 
-article = "<p style='text-align: center'>Created by <a target='_blank' href='https://fi.ub.ac.id/'>Jurusan Fisika, FMIPA, Universitas Brawijaya </a></p>"
+# article = "<p style='text-align: center'>Created by <a target='_blank' href='https://fi.ub.ac.id/'>Jurusan Fisika, FMIPA, Universitas Brawijaya </a></p>"
 
 
-gr.Interface(segment, i, o, 
-    allow_flagging = False, 
-    description = description,
-    title = title,
-    article = article,
-    examples = examples,
-    analytics_enabled = False).launch()
-plotting_demo()
+# gr.Interface(segment, i, o, 
+#     allow_flagging = False, 
+#     description = description,
+#     title = title,
+#     article = article,
+#     examples = examples,
+#     analytics_enabled = False).launch()
+# plotting_demo()
 
-show_code(plotting_demo)
+# show_code(plotting_demo)
+import streamlit as st
+from PIL import Image
+import numpy as np
+
+def segment(image):
+    # Your segmentation code here
+    return segmented_image
+
+st.title("Brain Tumor Segmentation Web Application")
+st.write("This system is designed to help automate the process of accurately and efficiently segmenting brain MRIs into regions of interest. It does this by using a UBNet-Seg Architecture that has been trained on a large dataset of manually annotated brain images.")
+
+uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded MRI.', use_column_width=True)
+    if st.button('Segmentasi'):
+        result = segment(np.array(image))
+        st.image(result, caption='Hasil Segmentasi.', use_column_width=True)
+
