@@ -41,8 +41,12 @@
 #     # rerun.
 #     st.button("Re-run")
 
+import streamlit as st
 
+# Set the page configuration
 st.set_page_config(page_title="MRI Brain Tumor Segmentation", page_icon="🧠")
+
+# The rest of your Streamlit app code goes here
 st.markdown("# MRI Brain Tumor Segmentation")
 # st.sidebar.header("Plotting Demo")
 st.write(
