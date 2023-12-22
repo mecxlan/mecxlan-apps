@@ -40,6 +40,8 @@
 #     # this button is not connected to any other logic, it just causes a plain
 #     # rerun.
 #     st.button("Re-run")
+!pip install matplotlib
+!pip install --upgrade matplotlib
 
 import streamlit as st
 
