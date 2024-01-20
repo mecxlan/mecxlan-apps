@@ -38,7 +38,8 @@ st.markdown(
 )
 
 st.link_button("💻 Github", "https://github.com/mecxlan/") 
-st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/") 
+# st.link_button("🧭 Data Analytics", "https://mecxlan.hashnode.dev/") 
+st.link_button("🕸️ Articles", "https://sites.google.com/view/mecxlan/articles?authuser=0")
 st.link_button("📅 Data Sets", "https://www.kaggle.com/mecxlan") 
 st.link_button("🔗 LinkedIn", "www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mecxlan")
 
